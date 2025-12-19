@@ -1,0 +1,44 @@
+## Stage 1 baseline configuration (v1 data, per-trace normalization). 
+dataset:
+  version: v1
+  norm_mode: per_trace  # per_trace | global
+  add_tau_p: false
+  tau_method: travel_time  # travel_time | sta_lta (reserved) | null
+  vp_km_per_s: 6.0
+  window:
+    length_samples: 7001  # full length, ignored when version=v1
+    align_on_pick: false
+
+training:
+  seed: 0
+  epochs: 50
+  batch_size: 4
+  base_channels: 64
+  channel_multipliers: [1, 2, 4]
+  num_res_blocks: 2
+  dropout: 0.0
+  optimizer:
+    type: adamw
+    lr: 1.0e-4
+    weight_decay: 0.0
+  ema_decay: 0.999
+
+diffusion:
+  timesteps: 200
+  schedule: linear  # linear | cosine
+  target: eps  # eps | v
+  beta_start: 1.0e-4
+  beta_end: 0.02
+  classifier_free_dropout: 0.0
+
+loss:
+  early_window_seconds: 5.0
+  early_weight: 1.0
+  rest_weight: 1.0
+
+sampling:
+  method: ddpm  # ddpm | ddim
+  ddim_eta: 0.0
+  default_steps: 50
+  guidance_scale: 1.0
+

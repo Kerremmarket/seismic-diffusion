@@ -1,0 +1,27 @@
+__pycache__/
+*.py[cod]
+*.so
+
+# environments
+.env
+.venv
+env/
+venv/
+
+# tooling
+.idea/
+.vscode/
+.pytest_cache/
+.mypy_cache/
+.DS_Store
+
+# outputs
+stage1_runs/
+wandb/
+*.pt
+*.pth
+*.ckpt
+
+# notebooks & caches
+.ipynb_checkpoints/
+

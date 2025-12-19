@@ -1,0 +1,49 @@
+# Stage 1 v2 configuration: aligned window, tau_p feature, global normalization.
+dataset:
+  version: v2
+  norm_mode: global  # per_trace | global
+  add_tau_p: true
+  tau_method: travel_time  # later switch to sta_lta when picks are ready
+  vp_km_per_s: 5.8
+  window:
+    length_seconds: 40.0
+    pre_seconds: 5.0
+    align_on_pick: true
+
+training:
+  seed: 123
+  epochs: 60
+  batch_size: 2  # reduced for thermals
+  base_channels: 64
+  channel_multipliers: [1, 2, 4]
+  num_res_blocks: 2
+  dropout: 0.0
+  optimizer:
+    type: adamw
+    lr: 1.0e-4
+    weight_decay: 0.0
+  ema_decay: 0.999
+  log_every: 10
+  sample_every: 500
+  checkpoint_every: 500
+
+diffusion:
+  timesteps: 400
+  schedule: cosine
+  target: v
+  beta_start: 1.0e-4
+  beta_end: 0.02
+  classifier_free_dropout: 0.1
+
+loss:
+  early_window_seconds: 6.0
+  early_weight: 2.0
+  rest_weight: 1.0
+  spectral_weight: 0.1
+
+sampling:
+  method: ddim
+  ddim_eta: 0.0
+  default_steps: 60
+  guidance_scale: 1.5
+

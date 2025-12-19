@@ -1,0 +1,62 @@
+# Stage 1 v3 configuration: 10 s trimmed prefix, higher-capacity model, energy-aware losses.
+dataset:
+  version: v3_trimmed
+  norm_mode: global
+  add_tau_p: true
+  tau_method: travel_time
+  sample_rate: 100.0
+  window:
+    slice_len_samples: 2992  # ensure divisible by total downsample factor (16)
+    align_on_pick: false
+
+training:
+  seed: 123
+  epochs: 120
+  batch_size: 8
+  effective_batch_size: 32
+  dropout: 0.0
+  num_workers: 4
+  grad_clip: 1.0
+  warmup_steps: 1000
+  require_cuda: true
+  tensorboard: true
+  optimizer:
+    type: adamw
+    lr: 1.0e-4
+    weight_decay: 1.0e-2
+  ema_decay: 0.999
+  log_every: 50
+  sample_every: 500
+  checkpoint_every: 1000
+
+model:
+  time_embedding_dim: 512
+  kernel_size: 5
+  station_embedding_dim: 16
+  base_channels: 128
+  channel_multipliers: [1, 2, 4, 8]
+  num_res_blocks: 3
+  use_attention: true
+  attention_heads: 4
+  mid_dilations: [1, 2, 4]
+
+diffusion:
+  timesteps: 400
+  schedule: cosine
+  target: v
+  beta_start: 1.0e-4
+  beta_end: 0.02
+  classifier_free_dropout: 0.1
+
+loss:
+  spectral_weight: 0.4
+  energy_window_seconds: 0.5
+  energy_weight_alpha: 1.5
+  amp_loss_weight: 0.15
+
+sampling:
+  method: ddim
+  ddim_eta: 0.0
+  default_steps: 80
+  guidance_scale: 1.1
+  preview_traces: 8
