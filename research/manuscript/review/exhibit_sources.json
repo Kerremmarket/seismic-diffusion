@@ -1,0 +1,7 @@
+{
+  "input": "../analysis/paper_seeds50_20261030/CPU_RESULTS.json",
+  "input_sha256": "2dcb492ee317ae334a63a32ebf9640bbe24285e8a4f13697521c1cdb1a351eaf",
+  "tables": 4,
+  "figures": 2,
+  "scope": "Aggregate saved results only; no new fitting or waveform scoring."
+}

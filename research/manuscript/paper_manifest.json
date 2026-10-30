@@ -1,0 +1,23 @@
+{
+  "created_at_utc": "2026-10-30T17:56:42.527950+00:00",
+  "pages": 15,
+  "tables": 6,
+  "figures": 4,
+  "scope": "Working paper, waveform figures and aggregate score extract. Private data, checkpoints and event-level ensembles are excluded.",
+  "source_results_sha256": "5103e09e585bfd77ce4c34f8a9610a12a5ff2fb10819344d27eecc6b7622a6ef",
+  "aggregate_rebuild": "build_exhibits.py reproduces the manuscript byte-for-byte",
+  "files": {
+    ".gitignore": "5ec0ed759d4158c9cff0d84d992be239b401e3e6ecd5f61d322c6b48e05f1620",
+    "README.md": "2873f7da8d8a5a64aef91aa8fdccfad91be63996b406bba274daeb97e94fb952",
+    "output/pdf/working_paper.pdf": "f205d4c97c6bb03d80608cc84cdbca70d707006c4b6fc79cf727ba8a8e83647c",
+    "research/manuscript/working_paper.tex": "f6821ca9e6964cbdfca01dd749926c3a40c5e5ebf9c549eeacd13bdc91dfe64e",
+    "research/manuscript/README.md": "8065985e6c4de75418d260327f1dd1c96cf46b69ac00cc028e921255297d899d",
+    "research/manuscript/build_exhibits.py": "e355875e049cbfbe4dbc5985b68ce01faf607d07e54d916067def140c3b536be",
+    "research/manuscript/review/exhibit_sources.json": "ca1261bcba41719e00fc18f79ed3d7c4b2c26ba7bbf3f54a4e2b24f1a99ad6a9",
+    "research/analysis/paper_seeds50_20261030/CPU_RESULTS.json": "2dcb492ee317ae334a63a32ebf9640bbe24285e8a4f13697521c1cdb1a351eaf",
+    "research/manuscript/figures/waveform_draws.pdf": "679f1d3e49bd8bdf9960e59e3a6e1f0ca9ebba596b5fe4e34e30d66c6861846a",
+    "research/manuscript/figures/waveform_draws.png": "09e18f35cb9950dabaa22dc3b056af3ebfa138315dfd636d4084d9a822a42889",
+    "research/manuscript/figures/waveform_methods.png": "73e9d687ffe7c54de5540ab0496cb696229140cd11cf8c5539e2e7e1afb1a4b0",
+    "research/manuscript/figures/waveform_methods.pdf": "bdcb27f216d33fbea63786e962b96c12976602894b7b8bcbe070f385a31346bd"
+  }
+}

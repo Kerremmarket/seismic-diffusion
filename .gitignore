@@ -25,3 +25,24 @@ wandb/
 # notebooks & caches
 .ipynb_checkpoints/
 
+# Private research inputs and model outputs
+*.npy
+*.npz
+timeseries_Z.csv
+processed_events.csv
+z_eq_codes.csv
+artifacts/
+png/
+research/kaggle/private_input/
+research/kaggle/jobs/
+.kaggle/
+kaggle.json
+.env.*
+
+# Document build intermediates and local previews
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+tmp/
